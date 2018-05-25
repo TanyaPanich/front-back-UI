@@ -20,6 +20,7 @@ class Header extends Component {
   }
 }
 
+
 const mapStateToProps = (state) => state.auth
 const mapDispatchToProps = (dispatch) => bindActionCreators({ logout }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

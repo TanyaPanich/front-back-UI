@@ -39,7 +39,7 @@ class LoginForm extends Component {
             <input
               placeholder='username'
               onChange={this.onusernameChange}
-              val={this.state.username} />
+              value={this.state.username} />
           </div>
           <div>
             <label>Password:</label>
@@ -58,5 +58,4 @@ class LoginForm extends Component {
 
 const mapStateToProps = (state) => state.auth
 const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
-
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
