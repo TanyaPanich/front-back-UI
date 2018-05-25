@@ -27,7 +27,7 @@ class LoginForm extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    // this.props.loginSubmit({ username: this.state.username, password: this.state.password })
+    this.props.loginSubmit({ username: this.state.username, password: this.state.password })
   }
 
   render() {
@@ -46,7 +46,7 @@ class LoginForm extends Component {
             <input
               placeholder='Password'
               onChange={this.onPasswordChange}
-              val={this.state.password} />
+              value={this.state.password} />
           </div>
           <input type="submit"/>
           <p>{this.props.error}</p>
@@ -57,7 +57,6 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = (state) => state.auth
-// const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({ loginSubmit }, dispatch)
 
-// export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
-export default connect(mapStateToProps)(LoginForm)
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
